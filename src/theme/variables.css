@@ -1,8 +1,20 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+/* Set the color on all ion-button elements */
+ion-button {
+  --color: #222;
+}
+
+/* Set the background on an ion-button with the .fancy-button class */
+.fancy-button {
+  --background: #00ff00;
+}
+
 /** Ionic CSS Variables **/
 :root {
+  --ion-background-color: #ff3700;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
