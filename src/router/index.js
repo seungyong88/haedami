@@ -5,7 +5,11 @@ import TabsPage from '@/pages/TabsPage.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: 'login'
+  },
+  {
+    path: '/login',
+    component: () => import('@/pages/LoginPage.vue')
   },
   {
     path: '/tabs/',
@@ -24,8 +28,8 @@ const routes = [
         component: () => import('@/pages/Tab2Page.vue')
       },
       {
-        path: 'testpage',
-        component: () => import('@/pages/TestPage.vue')
+        path: 'setting',
+        component: () => import('@/pages/SettingPage.vue')
       },
       {
         path: 'order',

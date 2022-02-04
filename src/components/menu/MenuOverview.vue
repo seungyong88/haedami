@@ -19,18 +19,17 @@
 </template>
 
 <script>
-import { IonImg, IonList, IonItem, IonBadge } from '@ionic/vue';
+import { IonImg, IonList, IonItem, IonBadge, IonText } from '@ionic/vue';
 import { numberFormat } from "@/utils/filter.js";
 
 export default {
   props: ['item'],
   components: {
-    IonImg, IonList, IonItem, IonBadge
+    IonImg, IonList, IonItem, IonBadge, IonText
   },
   created() {
   },
   unmounted() {
-
   },
   methods: {
     numberFormat

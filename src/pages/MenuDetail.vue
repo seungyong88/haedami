@@ -9,12 +9,15 @@
       :item="loadedMenu"
     >
     </menu-overview>
+   
   </base-layout>
 </template>
 
 <script>
 import BaseLayout from '../components/base/BaseLayout.vue';
 import MenuOverview from "@/components/menu/MenuOverview.vue";
+// import { IonTabBar, IonTabs } from '@ionic/vue'; 
+
 export default {
   data() {
     return {

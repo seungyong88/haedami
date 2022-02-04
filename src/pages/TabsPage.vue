@@ -13,14 +13,14 @@
           <ion-label>Tab 2</ion-label>
         </ion-tab-button>
         
-        <ion-tab-button tab="tab3" href="/tabs/TestPage">
-          <ion-icon :icon="square" />
-          <ion-label>TestPage</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="tab4" href="/tabs/order">
+        <ion-tab-button tab="tab3" href="/tabs/order">
           <ion-icon :icon="cafe" />
           <ion-label>주문</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="tab4" href="/tabs/setting">
+          <ion-icon name="settings-sharp"></ion-icon>
+          <ion-label>설정</ion-label>
         </ion-tab-button>
 
       </ion-tab-bar>
@@ -30,7 +30,7 @@
 
 <script>
 import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { ellipse, square, triangle, cafe } from 'ionicons/icons';
+import { ellipse, settingsOutline, triangle, cafe } from 'ionicons/icons';
 
 export default {
   components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
@@ -42,15 +42,20 @@ export default {
   setup() {
     return {
       ellipse, 
-      square, 
+      settingsOutline, 
       triangle,
       cafe
     }
   },
+  created() {
+    this.tabsFlag = (this.$route.matched[1].path !== "/tabs/order/:id");
+
+    const darkModeFlag = localStorage.getItem("darkMode"); 
+    console.log(darkModeFlag);
+  },
   watch: {
     '$route'(currentRoute) {
       this.tabsFlag = (currentRoute.matched[1].path !== "/tabs/order/:id");
-      console.log('dd', currentRoute.matched[1].path !== "/tabs/order/:id")
     }
   },
 }
